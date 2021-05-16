@@ -1,0 +1,32 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        int profit =0;
+        int maxInArray = prices[0];
+        for(int i=1; i<prices.length; i++){
+            if(prices[i] > maxInArray){
+                profit += prices[i] - prices[i-1];
+                maxInArray = prices[i];
+            }else{
+                maxInArray = prices[i];
+            }
+        }
+        return profit;
+    }
+}
+
+
+
+// public int maxProfit(int[] prices) {
+//         int i = 0, buy, sell, profit = 0, N = prices.length - 1;
+//         while (i < N) {
+//             while (i < N && prices[i + 1] <= prices[i]) i++;
+//             buy = prices[i];
+
+//             while (i < N && prices[i + 1] > prices[i]) i++;
+//             sell = prices[i];
+
+//             profit += sell - buy;
+//         }
+//         return profit;
+// }
+// This is best and easy approach. The time complexity is O(N), space complexity is O(5)
