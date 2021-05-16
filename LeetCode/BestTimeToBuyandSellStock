@@ -1,0 +1,28 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        int max  = 0;
+        int maxInArray = prices[0];
+        for(int i=1; i<prices.length; i++){
+            if(prices[i] > maxInArray){
+                max = Math.max(max, prices[i]-maxInArray);
+            }else{
+                maxInArray = prices[i];
+            }
+        }
+        return max;
+    }
+}
+
+// class Solution {
+    
+//     // KADANE'S ALGORITHM AND THIS IS THE BEST APPROACH ----- <IMP>
+//     public int maxProfit(int[] prices) {
+//         int currentMax = 0;
+//         int maxSoFar = 0;
+//         for(int i=1; i<prices.length; i++){
+//             currentMax = Math.max(0, currentMax += prices[i] - prices[i-1]);
+//             maxSoFar = Math.max(currentMax, maxSoFar);
+//         }
+//         return maxSoFar;
+//     }
+// }
