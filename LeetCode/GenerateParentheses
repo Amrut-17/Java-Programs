@@ -1,0 +1,15 @@
+class Solution {
+    public List<String> generateParenthesis(int n) {
+        List<String> arr = new ArrayList<>();
+        generate("(", arr, 1, 0, n);
+        return arr;
+    }
+    void generate(String str, List<String> arr, int op, int cl, int n){
+        if(str.length() == 2*n){
+            arr.add(str);
+            return;
+        }
+        if(op<n)generate(str+"(", arr, op+1, cl, n);
+        if(cl<op)generate(str+")", arr, op, cl+1, n);
+    }
+}
