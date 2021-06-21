@@ -1,0 +1,30 @@
+<snippet>
+	<content><![CDATA[
+// Hello Amrut !!!
+import java.io.*;
+import java.util.*;
+
+class $1 {
+	public static void main(String[] args)
+	{
+		Scanner s = new Scanner(System.in);
+		if (System.getProperty("ONLINE_JUDGE") == null) {
+			try {
+				System.setOut(new PrintStream(
+				new FileOutputStream("output.txt")));
+
+				s = new Scanner(new File("input.txt"));
+			}
+			catch (Exception e) {
+
+			}
+		}
+		// Your Code Start Here
+	}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>come</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.java</scope>
+</snippet>
