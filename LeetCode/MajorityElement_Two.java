@@ -1,5 +1,7 @@
 class Solution {
     public List<Integer> majorityElement(int[] nums) {
+        
+//          ************* ONLU TWO ELEMENTS BECAUSE OF N/3 IE . IF N=10 THEN TO SATISFY CONDITION 10/3 = 3 > IE 4 ONLY TWO ELEM POSSIBLE !!!!! IMP ****
         int n1 = -1;
         int n2 = -1;
         int count1 = 0;
